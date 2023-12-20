@@ -1,0 +1,2 @@
+2023-12-02 15:42:17.772 +07:00 [INF] Get data from DMS (Date : 20230901 to 20231031)
+2023-12-02 15:42:33.577 +07:00 [ERR] Get : Connection request timed out

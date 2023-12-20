@@ -4,9 +4,9 @@ namespace CFRs.BE.Helper
 {
     public static class LogHelper
     {
-        public static void WriteLog(string LogType, string Message)
+        public static void WriteLog(string System, string LogType, string Message)
         {
-            string LogFile = "Logs//CFRs_Log_.txt";
+            string LogFile = $"Logs_{System}//{System}_Log_.txt";
 
             Log.Logger = new LoggerConfiguration()
                 .MinimumLevel.Debug()
@@ -16,16 +16,28 @@ namespace CFRs.BE.Helper
             try
             {
                 if (string.Equals(LogType, "INF"))
+                {
                     Log.Information(Message, "[INF]");
+                    Console.WriteLine($"[INF] - {Message}");
+                }
                 else if (string.Equals(LogType, "ERR"))
+                {
                     Log.Error(Message, "[ERR]");
+                    Console.WriteLine($"[ERR] - {Message}");
+                }
             }
             catch (Exception exception)
             {
                 if (string.Equals(LogType, "INF"))
+                {
                     Log.Information(Message, "[INF]");
+                    Console.WriteLine($"[INF] - {Message}");
+                }
                 else if (string.Equals(LogType, "ERR"))
+                {
                     Log.Error(Message, "[ERR]");
+                    Console.WriteLine($"[ERR] - {Message}");
+                }
             }
             finally
             {

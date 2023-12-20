@@ -1,0 +1,18 @@
+2023-09-26 19:13:46.819 +07:00 [INF] Call.. api/BankStatement/GetImportData/Get
+2023-09-26 19:13:48.565 +07:00 [INF] Call Ended.. api/BankStatement/GetImportData/Get
+2023-09-26 19:14:27.813 +07:00 [INF] Call.. api/BankStatement/GetImportData/Get
+2023-09-26 19:14:27.921 +07:00 [INF] Call Ended.. api/BankStatement/GetImportData/Get
+2023-09-26 19:14:50.256 +07:00 [INF] Call.. api/BankStatement/GetImportData/Get
+2023-09-26 19:14:50.390 +07:00 [INF] Call Ended.. api/BankStatement/GetImportData/Get
+2023-09-26 19:15:16.973 +07:00 [INF] Call.. api/BankStatement/GetImportData/Get
+2023-09-26 19:15:46.982 +07:00 [INF] Call Ended.. api/BankStatement/GetImportData/Get
+2023-09-26 19:15:51.412 +07:00 [INF] Call.. api/BankStatement/GetImportData/Get
+2023-09-26 19:17:26.724 +07:00 [INF] Call Ended.. api/BankStatement/GetImportData/Get
+2023-09-26 19:17:46.123 +07:00 [INF] Call.. api/BankStatement/GetImportData/Get
+2023-09-26 19:17:57.811 +07:00 [INF] Call Ended.. api/BankStatement/GetImportData/Get
+2023-09-26 19:32:30.679 +07:00 [INF] Call.. api/BankStatement/GetImportData/Get
+2023-09-26 19:32:31.308 +07:00 [INF] Call Ended.. api/BankStatement/GetImportData/Get
+2023-09-26 19:33:07.820 +07:00 [INF] Call.. api/BankStatement/GetImportData/SAPGet
+2023-09-26 19:33:17.320 +07:00 [INF] Call Ended.. api/BankStatement/GetImportData/SAPGet
+2023-09-26 19:33:49.299 +07:00 [INF] Call.. api/BankStatement/GetImportData/SAPGet
+2023-09-26 19:33:54.241 +07:00 [INF] Call Ended.. api/BankStatement/GetImportData/SAPGet

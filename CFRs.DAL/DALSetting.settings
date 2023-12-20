@@ -2,12 +2,12 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="CFRs.DAL" GeneratedClassName="DALSetting">
   <Profiles />
   <Settings>
-    <Setting Name="EBAOConnectionString" Type="(Connection string)" Scope="Application">
+    <Setting Name="EBAO_LS_ConnectionString" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
-  &lt;ConnectionString&gt;Data Source=(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 10.9.101.26)(PORT = 1521)))(CONNECT_DATA =(SID = lsncisdb)(SERVER = DEDICATED)));User ID=ebao_ls_prod;Password=password;&lt;/ConnectionString&gt;
+  &lt;ConnectionString&gt;Data Source=(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 10.9.101.26)(PORT = 1521)))(CONNECT_DATA =(SID = lsncisdb)(SERVER = DEDICATED)));User ID=ebao_ls_prod_read;Password=password;&lt;/ConnectionString&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 10.9.101.26)(PORT = 1521)))(CONNECT_DATA =(SID = lsncisdb)(SERVER = DEDICATED)));User ID=ebao_ls_prod;Password=password;</Value>
+      <Value Profile="(Default)">Data Source=(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 10.9.101.26)(PORT = 1521)))(CONNECT_DATA =(SID = lsncisdb)(SERVER = DEDICATED)));User ID=ebao_ls_prod_read;Password=password;</Value>
     </Setting>
     <Setting Name="OSCConnectionString" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
@@ -19,9 +19,37 @@
     <Setting Name="CFRsConnectionString" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
-  &lt;ConnectionString&gt;Data Source=SL-DEVFRDB01;Initial Catalog=CFRs;Persist Security Info=True;User ID=CFR;Password=P@ssw0rd@123&lt;/ConnectionString&gt;
+  &lt;ConnectionString&gt;Data Source=SL-DEVFRDB01;Initial Catalog=CFRs;Persist Security Info=True;User ID=sa;Password=P@ssw0rd&lt;/ConnectionString&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=SL-DEVFRDB01;Initial Catalog=CFRs;Persist Security Info=True;User ID=CFR;Password=P@ssw0rd@123</Value>
+      <Value Profile="(Default)">Data Source=SL-DEVFRDB01;Initial Catalog=CFRs;Persist Security Info=True;User ID=sa;Password=P@ssw0rd</Value>
+    </Setting>
+    <Setting Name="EBAO_GLS_ConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+  &lt;ConnectionString&gt;Data Source=(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 10.9.101.26)(PORT = 1521)))(CONNECT_DATA =(SID = glsncisdb)(SERVER = DEDICATED)));User ID=ebao_gls_prod_read;Password=password;&lt;/ConnectionString&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 10.9.101.26)(PORT = 1521)))(CONNECT_DATA =(SID = glsncisdb)(SERVER = DEDICATED)));User ID=ebao_gls_prod_read;Password=password;</Value>
+    </Setting>
+    <Setting Name="DMS_ConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+  &lt;ConnectionString&gt;Data Source=(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 10.9.105.175)(PORT = 1521)))(CONNECT_DATA =(SID = dmslife)(SERVER = DEDICATED)));User ID=dms_al;Password=passw0rd;&lt;/ConnectionString&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 10.9.105.175)(PORT = 1521)))(CONNECT_DATA =(SID = dmslife)(SERVER = DEDICATED)));User ID=dms_al;Password=passw0rd;</Value>
+    </Setting>
+    <Setting Name="SMART_RP_ConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+  &lt;ConnectionString&gt;Data Source=10.5.12.134;Initial Catalog=SmartLife;Persist Security Info=True;User ID=usrsmartlifereadonly;Password=Selife#2023&lt;/ConnectionString&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=10.5.12.134;Initial Catalog=SmartLife;Persist Security Info=True;User ID=usrsmartlifereadonly;Password=Selife#2023</Value>
+    </Setting>
+    <Setting Name="SAP_ConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+  &lt;ConnectionString&gt;Data Source=10.9.105.199;Initial Catalog=201_SELIC;Persist Security Info=True;User ID=INFB1;Password=B1@read&lt;/ConnectionString&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=10.9.105.199;Initial Catalog=201_SELIC;Persist Security Info=True;User ID=INFB1;Password=B1@read</Value>
     </Setting>
   </Settings>
 </SettingsFile>

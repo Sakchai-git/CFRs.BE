@@ -1,0 +1,5 @@
+2023-11-08 07:54:28.486 +07:00 [INF] Get data from SAP (Date : 20230901 to 20231031)
+2023-11-08 07:55:13.127 +07:00 [ERR] Get : A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+2023-11-08 07:57:10.310 +07:00 [INF] Batch_SAP Start
+2023-11-08 07:57:10.320 +07:00 [INF] Get data from SAP (Date : 20230901 to 20231031)
+2023-11-08 07:57:53.693 +07:00 [ERR] Get : A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)

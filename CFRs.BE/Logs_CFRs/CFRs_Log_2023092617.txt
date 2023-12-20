@@ -1,0 +1,4 @@
+2023-09-26 17:30:34.213 +07:00 [INF] Call.. api/BankStatement/GetImportData/SAPGet
+2023-09-26 17:30:34.464 +07:00 [INF] Call Ended.. api/BankStatement/GetImportData/SAPGet
+2023-09-26 17:30:51.642 +07:00 [INF] Call.. api/BankStatement/GetImportData/SAPGet
+2023-09-26 17:30:51.702 +07:00 [INF] Call Ended.. api/BankStatement/GetImportData/SAPGet

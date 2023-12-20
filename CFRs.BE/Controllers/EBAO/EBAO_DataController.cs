@@ -22,7 +22,7 @@ namespace CFRs.BE.EBAO
 
                 DataTable dtReturn = new DataTable();
 
-                dtReturn = EBAO_Data_BLL.Instance.GetTestBLL();
+                //dtReturn = EBAO_LS_Data_BLL.Instance.GetTestBLL();
 
                 json = JsonConvert.SerializeObject(dtReturn, Formatting.None);
                 response.Content = new StringContent(json, Encoding.UTF8, "application/json");

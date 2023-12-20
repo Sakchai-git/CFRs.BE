@@ -1,0 +1,3 @@
+2023-12-02 15:42:17.877 +07:00 [INF] Batch_SMART_RP Start
+2023-12-02 15:42:17.911 +07:00 [INF] Get data from Smart RP (Date : 20230901 to 20231031)
+2023-12-02 15:42:18.885 +07:00 [ERR] Get : Login failed for user 'usrsmartlifereadonly'.  Reason: The password of the account has expired.

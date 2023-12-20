@@ -1,0 +1,4 @@
+2023-11-07 05:51:44.396 +07:00 [INF] Get data from EBAO LS (Date : 20230901 to 20231031)
+2023-11-07 05:58:16.792 +07:00 [INF] Found Data 236520 Records.
+2023-11-07 05:58:16.796 +07:00 [INF] Write to DB
+2023-11-07 05:58:49.891 +07:00 [ERR] Get : Timeout expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.

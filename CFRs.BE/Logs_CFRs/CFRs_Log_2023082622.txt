@@ -1,0 +1,4 @@
+2023-08-26 22:04:17.608 +07:00 [INF] Call.. api/BankStatement/GetImportData/Get
+2023-08-26 22:04:18.810 +07:00 [INF] Call Ended.. api/BankStatement/ImportFile/Import
+2023-08-26 22:07:55.836 +07:00 [INF] Call.. api/BankStatement/GetImportData/Get
+2023-08-26 22:07:56.700 +07:00 [INF] Call Ended.. api/BankStatement/ImportFile/Import

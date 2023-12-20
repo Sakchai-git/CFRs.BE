@@ -1,0 +1,9 @@
+2023-08-26 15:00:24.760 +07:00 [INF] Call.. api/BankStatement/GetImportData/Get
+2023-08-26 15:00:24.982 +07:00 [ERR] Call.. api/BankStatement/ImportFile/Import exception : Incorrect syntax near 'COL_DATE_WHERE'.
+2023-08-26 15:00:24.987 +07:00 [INF] Call Ended.. api/BankStatement/ImportFile/Import
+2023-08-26 15:00:54.213 +07:00 [INF] Call.. api/BankStatement/GetImportData/Get
+2023-08-26 15:00:54.479 +07:00 [INF] Call Ended.. api/BankStatement/ImportFile/Import
+2023-08-26 15:02:34.671 +07:00 [INF] Call.. api/BankStatement/GetImportData/Get
+2023-08-26 15:02:34.968 +07:00 [INF] Call Ended.. api/BankStatement/ImportFile/Import
+2023-08-26 15:02:54.376 +07:00 [INF] Call.. api/BankStatement/GetImportData/Get
+2023-08-26 15:02:54.452 +07:00 [INF] Call Ended.. api/BankStatement/ImportFile/Import

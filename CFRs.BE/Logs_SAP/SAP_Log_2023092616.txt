@@ -1,0 +1,18 @@
+2023-09-26 16:18:41.856 +07:00 [INF] Batch_SAP Start
+2023-09-26 16:18:41.885 +07:00 [INF] Get data from SAP (Date : 20230101 to 20230131)
+2023-09-26 16:18:42.660 +07:00 [ERR] Get : Access to the remote server is denied because no login-mapping exists.
+2023-09-26 16:19:06.931 +07:00 [INF] Batch_SAP Start
+2023-09-26 16:19:06.938 +07:00 [INF] Get data from SAP (Date : 20230101 to 20230131)
+2023-09-26 16:19:07.144 +07:00 [ERR] Get : Access to the remote server is denied because no login-mapping exists.
+2023-09-26 16:19:21.997 +07:00 [INF] Batch_SAP Start
+2023-09-26 16:19:22.706 +07:00 [INF] Get data from SAP (Date : 20230101 to 20230131)
+2023-09-26 16:19:32.678 +07:00 [ERR] Get : Access to the remote server is denied because no login-mapping exists.
+2023-09-26 16:19:47.109 +07:00 [INF] Batch_SAP Start
+2023-09-26 16:19:48.204 +07:00 [INF] Get data from SAP (Date : 20230101 to 20230131)
+2023-09-26 16:22:04.800 +07:00 [ERR] Get : Access to the remote server is denied because no login-mapping exists.
+2023-09-26 16:22:12.140 +07:00 [INF] Batch_SAP Start
+2023-09-26 16:22:12.161 +07:00 [INF] Get data from SAP (Date : 20230101 to 20230131)
+2023-09-26 16:48:34.394 +07:00 [INF] Batch_SAP Start
+2023-09-26 16:48:35.182 +07:00 [INF] Get data from SAP (Date : 20230101 to 20230131)
+2023-09-26 16:50:18.758 +07:00 [INF] Batch_SAP Start
+2023-09-26 16:50:19.982 +07:00 [INF] Get data from SAP (Date : 20230101 to 20230131)

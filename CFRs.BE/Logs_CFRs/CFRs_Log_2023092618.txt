@@ -1,0 +1,14 @@
+2023-09-26 18:18:26.381 +07:00 [INF] Call.. api/BankStatement/GetImportData/SAPGet
+2023-09-26 18:18:27.237 +07:00 [INF] Call Ended.. api/BankStatement/GetImportData/SAPGet
+2023-09-26 18:23:46.825 +07:00 [INF] Call.. api/BankStatement/GetImportData/SAPGet
+2023-09-26 18:23:47.068 +07:00 [ERR] Call.. api/BankStatement/GetImportData/SAPGet exception : Could not find file 'C:\OneDrive\Project\TGH - Bank Reconcile\Source Code\CFRs.BE\CFRs.BE\bin\Debug\net6.0\FileFormat\ImportDataSAP.xlsx'.
+2023-09-26 18:23:47.082 +07:00 [INF] Call Ended.. api/BankStatement/GetImportData/SAPGet
+2023-09-26 18:24:14.110 +07:00 [INF] Call.. api/BankStatement/GetImportData/SAPGet
+2023-09-26 18:24:14.576 +07:00 [INF] Call Ended.. api/BankStatement/GetImportData/SAPGet
+2023-09-26 18:53:07.687 +07:00 [INF] Call.. api/BankStatement/GetImportData/SAPGet
+2023-09-26 18:53:08.324 +07:00 [INF] Call Ended.. api/BankStatement/GetImportData/SAPGet
+2023-09-26 18:53:28.303 +07:00 [INF] Call.. api/BankStatement/GetImportData/SAPGet
+2023-09-26 18:54:07.022 +07:00 [INF] Call Ended.. api/BankStatement/GetImportData/SAPGet
+2023-09-26 18:54:09.100 +07:00 [INF] Call.. api/BankStatement/GetImportData/SAPGet
+2023-09-26 18:54:51.690 +07:00 [INF] Call.. api/BankStatement/GetImportData/SAPGet
+2023-09-26 18:55:01.064 +07:00 [INF] Call Ended.. api/BankStatement/GetImportData/SAPGet

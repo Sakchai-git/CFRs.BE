@@ -1,0 +1,3 @@
+2023-11-08 08:01:16.115 +07:00 [INF] Found Data 236520 Records.
+2023-11-08 08:01:16.125 +07:00 [INF] Write to DB
+2023-11-08 08:01:50.195 +07:00 [ERR] Get : Timeout expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.

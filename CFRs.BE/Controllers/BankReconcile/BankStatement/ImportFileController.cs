@@ -1,4 +1,5 @@
 ﻿using CFRs.BE.Helper;
+using CFRs.BLL.BANK_RECONCILE;
 using CFRs.ENT.BankStatement;
 using Ionic.Zip;
 using Microsoft.AspNetCore.Authorization;
@@ -27,15 +28,16 @@ namespace CFRs.BE.Controllers.BankReconcile.BankStatement
 
             try
             {
-                LogHelper.WriteLog("INF", "Call.. api/BankStatement/ImportFile/Import");
+                LogHelper.WriteLog("CFRs", "INF", "Call.. api/BankStatement/ImportFile/Import");
 
                 System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
 
                 if (!string.Equals(BankShortName.ToUpper(), "BAAC")
                     && !string.Equals(BankShortName.ToUpper(), "KBANK")
-                    && !string.Equals(BankShortName.ToUpper(), "KTB"))
+                    && !string.Equals(BankShortName.ToUpper(), "KTB")
+                    && !string.Equals(BankShortName.ToUpper(), "UOB"))
                 {
-                    LogHelper.WriteLog("ERR", $"Bank {BankShortName} not found logic import file.");
+                    LogHelper.WriteLog("CFRs", "ERR", $"Bank {BankShortName} not found logic import file.");
                     throw new Exception($"Bank {BankShortName} not found logic import file.");
                 }
 
@@ -55,7 +57,7 @@ namespace CFRs.BE.Controllers.BankReconcile.BankStatement
 
                     if (string.Equals(FileExt.ToLower(), ".zip"))
                     {
-                        LogHelper.WriteLog("INF", $"Unzip : {FilePath}");
+                        LogHelper.WriteLog("CFRs", "INF", $"Unzip : {FilePath}");
 
                         using (ZipFile zipFile = ZipFile.Read(FilePath))
                         {
@@ -76,13 +78,13 @@ namespace CFRs.BE.Controllers.BankReconcile.BankStatement
 
                                 dtReturn.Rows.Add(dr);
 
-                                LogHelper.WriteLog("INF", $"Unzip files : {file.FullName}");
+                                LogHelper.WriteLog("CFRs", "INF", $"Unzip files : {file.FullName}");
                             }
                         }
                     }
                     else if (string.Equals(FileExt.ToLower(), ".rar"))
                     {
-                        LogHelper.WriteLog("INF", $"Unrar : {FilePath}");
+                        LogHelper.WriteLog("CFRs", "INF", $"Unrar : {FilePath}");
 
                         string PathRar = FilePath.Replace(".rar", "");
                         if (!System.IO.Directory.Exists(PathRar))
@@ -107,7 +109,7 @@ namespace CFRs.BE.Controllers.BankReconcile.BankStatement
 
                             dtReturn.Rows.Add(dr);
 
-                            LogHelper.WriteLog("INF", $"Unrar files : {file.FullName}");
+                            LogHelper.WriteLog("CFRs", "INF", $"Unrar files : {file.FullName}");
                         }
                     }
                     else if (string.Equals(FileExt.ToLower(), ".txt"))
@@ -118,7 +120,7 @@ namespace CFRs.BE.Controllers.BankReconcile.BankStatement
 
                         dtReturn.Rows.Add(dr);
 
-                        LogHelper.WriteLog("INF", $"files : {FilePath}");
+                        LogHelper.WriteLog("CFRs", "INF", $"files : {FilePath}");
                     }
                 }
 
@@ -135,7 +137,7 @@ namespace CFRs.BE.Controllers.BankReconcile.BankStatement
                             dtReturn.Rows[k]["RESULT"] = "E";
                             dtReturn.Rows[k]["MESSAGE"] = "File not found.";
 
-                            LogHelper.WriteLog("ERR", $"File not found. : {FilePath}");
+                            LogHelper.WriteLog("CFRs", "ERR", $"File not found. : {FilePath}");
 
                             continue;
                         }
@@ -144,52 +146,171 @@ namespace CFRs.BE.Controllers.BankReconcile.BankStatement
                         {
                             string[] lines = System.IO.File.ReadAllLines(FilePath, System.Text.Encoding.GetEncoding(874));
 
-                            for (int i = 0; i < lines.Length; i++)
+                            if (lines.Length > 0)
                             {
-                                string[] cols = lines[i].Split('|');
+                                for (int i = 0; i < lines.Length; i++)
+                                {
+                                    string[] cols = lines[i].Split('|');
 
-                                if (i == 0)
-                                {// Create DataTable Column
-                                    for (int j = 0; j < cols.Length; j++)
-                                    {
-                                        dtImport.Columns.Add($"COL_{j + 1}");
+                                    if (i == 0)
+                                    {// Create DataTable Column
+                                        for (int j = 0; j < cols.Length; j++)
+                                        {
+                                            dtImport.Columns.Add($"COL_{j + 1}");
+                                        }
                                     }
+
+                                    dtImport.Rows.Add(
+                                              cols[0].Trim()
+                                            , cols[1].Trim()
+                                            , cols[2].Trim()
+                                            , cols[3].Trim()
+                                            , cols[4].Trim()
+                                            , cols[5].Trim()
+                                            , cols[6].Trim()
+                                            , cols[7].Trim()
+                                            , cols[8].Trim()
+                                            , cols[9].Trim()
+                                            , cols[10].Trim()
+                                            , cols[11].Trim()
+                                            , cols[12].Trim()
+                                            , cols[13].Trim()
+                                            , cols[14].Trim()
+                                            , cols[15].Trim()
+                                            , cols[16].Trim()
+                                            , cols[17].Trim()
+                                            , cols[18].Trim()
+                                            , cols[19].Trim()
+                                            );
                                 }
 
-                                dtImport.Rows.Add(
-                                          cols[0].Trim()
-                                        , cols[1].Trim()
-                                        , cols[2].Trim()
-                                        , cols[3].Trim()
-                                        , cols[4].Trim()
-                                        , cols[5].Trim()
-                                        , cols[6].Trim()
-                                        , cols[7].Trim()
-                                        , cols[8].Trim()
-                                        , cols[9].Trim()
-                                        , cols[10].Trim()
-                                        , cols[11].Trim()
-                                        , cols[12].Trim()
-                                        , cols[13].Trim()
-                                        , cols[14].Trim()
-                                        , cols[15].Trim()
-                                        , cols[16].Trim()
-                                        , cols[17].Trim()
-                                        , cols[18].Trim()
-                                        , cols[19].Trim()
-                                        );
+                                //Insert to DB
+                                DataTable dtImportResult = StatementImport_BLL.Instance.ImportBLL(MonthID, Year, BankShortName
+                                                                , FilePath
+                                                                , string.Empty
+                                                                , 0
+                                                                , dtImport
+                                                                , string.Empty
+                                                                , string.Empty);
+
+                                dtReturn.Rows[k]["RESULT"] = dtImportResult.Rows[0]["TYPE"].ToString();
+                                dtReturn.Rows[k]["MESSAGE"] = dtImportResult.Rows[0]["MESSAGE"].ToString();
                             }
-
-                            //Insert to DB
-
                         }
                         else if (string.Equals(BankShortName.ToUpper(), "KBANK"))
                         {
+                            string[] lines = System.IO.File.ReadAllLines(FilePath, System.Text.Encoding.GetEncoding(874));
 
+                            if (lines.Length > 1)
+                            {//Have Heaader & Footer
+                                string Header = lines[0];
+                                string Footer = lines[lines.Length - 1];
+
+                                dtImport.Columns.Add("COL_1");
+                                dtImport.Columns.Add("COL_2");
+                                dtImport.Columns.Add("COL_3");
+                                dtImport.Columns.Add("COL_4");
+                                dtImport.Columns.Add("COL_5");
+
+                                for (int i = 1; i < lines.Length - 1; i++)
+                                {
+                                    dtImport.Rows.Add(
+                                          lines[i].Substring(0, 65).Trim()
+                                        , lines[i].Substring(65, 4).Trim()
+                                        , lines[i].Substring(69, 36).Trim()
+                                        , lines[i].Substring(105, 12).Trim()
+                                        , lines[i].Substring(118, 10).Trim()
+                                        );
+                                }
+
+                                //Insert to DB
+                                DataTable dtImportResult = StatementImport_BLL.Instance.ImportBLL(MonthID, Year, BankShortName
+                                                                , FilePath
+                                                                , string.Empty
+                                                                , 0
+                                                                , dtImport
+                                                                , Header
+                                                                , Footer);
+
+                                dtReturn.Rows[k]["RESULT"] = dtImportResult.Rows[0]["TYPE"].ToString();
+                                dtReturn.Rows[k]["MESSAGE"] = dtImportResult.Rows[0]["MESSAGE"].ToString();
+                            }
                         }
                         else if (string.Equals(BankShortName.ToUpper(), "KTB"))
                         {
+                            string[] lines = System.IO.File.ReadAllLines(FilePath, System.Text.Encoding.GetEncoding(874));
 
+                            if (lines.Length > 1)
+                            {
+                                string Header = lines[0];
+                                string Footer = string.Empty;
+
+                                dtImport.Columns.Add("COL_1");
+                                dtImport.Columns.Add("COL_2");
+                                dtImport.Columns.Add("COL_3");
+                                dtImport.Columns.Add("COL_4");
+
+                                for (int i = 1; i < lines.Length; i++)
+                                {
+                                    dtImport.Rows.Add(
+                                          lines[i].Substring(0, 26).Trim()
+                                        , lines[i].Substring(26, 58).Trim()
+                                        , lines[i].Substring(84, 26).Trim()
+                                        , lines[i].Substring(110, 220).Trim()
+                                        );
+                                }
+
+                                //Insert to DB
+                                DataTable dtImportResult = StatementImport_BLL.Instance.ImportBLL(MonthID, Year, BankShortName
+                                                                , FilePath
+                                                                , string.Empty
+                                                                , 0
+                                                                , dtImport
+                                                                , Header
+                                                                , Footer);
+
+                                dtReturn.Rows[k]["RESULT"] = dtImportResult.Rows[0]["TYPE"].ToString();
+                                dtReturn.Rows[k]["MESSAGE"] = dtImportResult.Rows[0]["MESSAGE"].ToString();
+                            }
+                        }
+                        else if (string.Equals(BankShortName.ToUpper(), "UOB"))
+                        {
+                            string[] lines = System.IO.File.ReadAllLines(FilePath, System.Text.Encoding.GetEncoding(874));
+
+                            if (lines.Length > 1)
+                            {//Have Heaader & Footer
+                                string Header = lines[0];
+                                string Footer = lines[lines.Length - 1];
+
+                                dtImport.Columns.Add("COL_1");
+                                dtImport.Columns.Add("COL_2");
+                                dtImport.Columns.Add("COL_3");
+                                dtImport.Columns.Add("COL_4");
+                                dtImport.Columns.Add("COL_5");
+
+                                for (int i = 1; i < lines.Length - 1; i++)
+                                {
+                                    dtImport.Rows.Add(
+                                          lines[i].Substring(0, 66).Trim()
+                                        , lines[i].Substring(66, 55).Trim()
+                                        , lines[i].Substring(121, 60).Trim()
+                                        , lines[i].Substring(181, 159).Trim()
+                                        , lines[i].Substring(340, 1009).Trim()
+                                        );
+                                }
+
+                                //Insert to DB
+                                DataTable dtImportResult = StatementImport_BLL.Instance.ImportBLL(MonthID, Year, BankShortName
+                                                                , FilePath
+                                                                , string.Empty
+                                                                , 0
+                                                                , dtImport
+                                                                , Header
+                                                                , Footer);
+
+                                dtReturn.Rows[k]["RESULT"] = dtImportResult.Rows[0]["TYPE"].ToString();
+                                dtReturn.Rows[k]["MESSAGE"] = dtImportResult.Rows[0]["MESSAGE"].ToString();
+                            }
                         }
                     }
                     catch (Exception ex)
@@ -197,8 +318,10 @@ namespace CFRs.BE.Controllers.BankReconcile.BankStatement
                         dtReturn.Rows[k]["RESULT"] = "E";
                         dtReturn.Rows[k]["MESSAGE"] = "Exception : " + ex.Message;
 
-                        LogHelper.WriteLog("ERR", $"Exception : {ex.Message}");
+                        LogHelper.WriteLog("CFRs", "ERR", $"Exception : {ex.Message}");
                     }
+
+
 
                     //Upload File to S3
                     //for (int i = 0; i < dtReturn.Rows.Count; i++)
@@ -220,14 +343,14 @@ namespace CFRs.BE.Controllers.BankReconcile.BankStatement
             }
             catch (Exception ex)
             {
-                LogHelper.WriteLog("ERR", "Call.. api/BankStatement/ImportFile/Import exception : " + ex.Message);
+                LogHelper.WriteLog("CFRs", "ERR", "Call.. api/BankStatement/ImportFile/Import exception : " + ex.Message);
 
                 response.Content = new StringContent(ex.Message, Encoding.UTF8, "application/json");
                 return BadRequest(ex.Message);
             }
             finally
             {
-                LogHelper.WriteLog("INF", "Call Ended.. api/BankStatement/ImportFile/Import");
+                LogHelper.WriteLog("CFRs", "INF", "Call Ended.. api/BankStatement/ImportFile/Import");
             }
         }
 

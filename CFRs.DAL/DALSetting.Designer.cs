@@ -12,7 +12,7 @@ namespace CFRs.DAL {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.2.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.7.0.0")]
     internal sealed partial class DALSetting : global::System.Configuration.ApplicationSettingsBase {
         
         private static DALSetting defaultInstance = ((DALSetting)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new DALSetting())));
@@ -28,10 +28,10 @@ namespace CFRs.DAL {
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 10.9." +
             "101.26)(PORT = 1521)))(CONNECT_DATA =(SID = lsncisdb)(SERVER = DEDICATED)));User" +
-            " ID=ebao_ls_prod;Password=password;")]
-        public string EBAOConnectionString {
+            " ID=ebao_ls_prod_read;Password=password;")]
+        public string EBAO_LS_ConnectionString {
             get {
-                return ((string)(this["EBAOConnectionString"]));
+                return ((string)(this["EBAO_LS_ConnectionString"]));
             }
         }
         
@@ -50,10 +50,56 @@ namespace CFRs.DAL {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=SL-DEVFRDB01;Initial Catalog=CFRs;Persist Security Info=True;User ID=" +
-            "CFR;Password=P@ssw0rd@123")]
+            "sa;Password=P@ssw0rd")]
         public string CFRsConnectionString {
             get {
                 return ((string)(this["CFRsConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 10.9." +
+            "101.26)(PORT = 1521)))(CONNECT_DATA =(SID = glsncisdb)(SERVER = DEDICATED)));Use" +
+            "r ID=ebao_gls_prod_read;Password=password;")]
+        public string EBAO_GLS_ConnectionString {
+            get {
+                return ((string)(this["EBAO_GLS_ConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP)(HOST = 10.9." +
+            "105.175)(PORT = 1521)))(CONNECT_DATA =(SID = dmslife)(SERVER = DEDICATED)));User" +
+            " ID=dms_al;Password=passw0rd;")]
+        public string DMS_ConnectionString {
+            get {
+                return ((string)(this["DMS_ConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=10.5.12.134;Initial Catalog=SmartLife;Persist Security Info=True;User" +
+            " ID=usrsmartlifereadonly;Password=Selife#2023")]
+        public string SMART_RP_ConnectionString {
+            get {
+                return ((string)(this["SMART_RP_ConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=10.9.105.199;Initial Catalog=201_SELIC;Persist Security Info=True;Use" +
+            "r ID=INFB1;Password=B1@read")]
+        public string SAP_ConnectionString {
+            get {
+                return ((string)(this["SAP_ConnectionString"]));
             }
         }
     }

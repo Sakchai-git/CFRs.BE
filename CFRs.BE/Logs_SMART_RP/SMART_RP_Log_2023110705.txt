@@ -1,0 +1,2 @@
+2023-11-07 05:51:44.366 +07:00 [INF] Batch_SMART_RP Start
+2023-11-07 05:51:44.396 +07:00 [INF] Get data from Smart RP (Date : 20230901 to 20231031)
